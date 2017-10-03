@@ -1,0 +1,2 @@
+See "site/test/main.rcp".
+Use, for example, "make --file=main.rcp all &> main.rcp.log".

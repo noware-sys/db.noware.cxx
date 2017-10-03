@@ -1,0 +1,3 @@
+A C++ Database Abstraction Layer
+
+Currently, only SQLite 3 is implemented.

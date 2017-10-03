@@ -1,0 +1,5 @@
+Simply #include the required files, without any extension.
+That is all which should normally be necessary.
+
+Examples:
+	#include <noware/db/sqlite>
