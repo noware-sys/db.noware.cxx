@@ -22,7 +22,7 @@
 //#include "../../cluster/machine.h++"
 //#include "../resource.h++"
 //#include "../../../sqlite/3.h"
-#include <noware/nr.hxx>
+#include <cln/nr.hxx>
 
 // Custom SQLite.
 //#include "sqlite.h"
@@ -49,32 +49,32 @@ namespace noware
 					//sqlite (const std::string & = ":memory:");
 					sqlite (void);
 					//sqlite (const std::string &);
-					~sqlite (void);
+					virtual ~sqlite (void);
 					
-					const bool connect (const std::string &);
-					const bool disconnect (void);
+					virtual const bool connect (const std::string &);
+					virtual const bool disconnect (void);
 					// get the connected state
-					const bool connected (void) const;
+					virtual const bool connected (void) const;
 					
 					//const bool query (std::map <std::string, std::map <std::string, std::string>> &/* result*/, const std::string &/* query*/, const std::map <int, std::string> &/* arguments*/, const noware::nr &/* tries_max*/ = tries_dft);
-					const bool query (std::map <std::string, std::map <std::string, std::string>> &/* result*/, const std::string &/* query*/, const std::map <int, std::string> &/* arguments*/, const unsigned int &/* tries_max*/ = tries_dft);
+					virtual const bool query (std::map <std::string/* row*/, std::map <std::string/* column*/, std::string/* cell*/>> &/* result*/, const std::string &/* query*/, const std::map <int, std::string> &/* arguments*/, const unsigned int &/* tries_max*/ = tries_dft);
 					//const bool query (std::map <std::string, std::map <std::string, std::string>> &/* result*/, const std::string &/* query*/, const noware::nr &/* tries_max*/ = tries_dft);
-					const bool query (std::map <std::string, std::map <std::string, std::string>> &/* result*/, const std::string &/* query*/, const unsigned int &/* tries_max*/ = tries_dft);
+					virtual const bool query (std::map <std::string, std::map <std::string, std::string>> &/* result*/, const std::string &/* query*/, const unsigned int &/* tries_max*/ = tries_dft);
 					//const bool query (const std::string &/* query*/, const std::map <int, std::string> &/* arguments*/, const noware::nr &/* tries_max*/ = tries_dft);
-					const bool query (const std::string &/* query*/, const std::map <int, std::string> &/* arguments*/, const unsigned int &/* tries_max*/ = tries_dft);
+					virtual const bool query (const std::string &/* query*/, const std::map <int, std::string> &/* arguments*/, const unsigned int &/* tries_max*/ = tries_dft);
 					//const bool query (const std::string &/* query*/, const noware::nr &/* tries_max*/ = tries_dft);
-					const bool query (const std::string &/* query*/, const unsigned int &/* tries_max*/ = tries_dft);
+					virtual const bool query (const std::string &/* query*/, const unsigned int &/* tries_max*/ = tries_dft);
 					
-					//noware::nr const effect (void) const;	// Affected rows
-					unsigned int const effect (void) const;	// Affected rows
+					//virtual noware::nr const effect (void) const;	// Affected rows
+					virtual unsigned int const effect (void) const;	// Affected rows
 					
 					unsigned short int const static tries_dft;
 					//noware::nr const static tries_dft;
 					//math::nr::integer tries;
 					
 					//const sqlite & operator = (const sqlite &);
-					bool const operator == (const sqlite &) const;
-					sqlite3 const * const operator * (void) const;
+					virtual bool const operator == (const sqlite &) const;
+					virtual sqlite3 const * const operator * (void) const;
 				protected:
 					//#if defined (SQLITE_CHANGES_SET) && SQLITE_CHANGES_SET
 					//	const bool effect/*_set*/ (const int &/* = 0*/);

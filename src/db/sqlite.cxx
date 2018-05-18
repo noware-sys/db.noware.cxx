@@ -12,7 +12,7 @@
 //#include <assert.h>
 
 //#include "../../../name.h++"
-#include <noware/nr.cxx>
+#include <cln/nr.cxx>
 
 const unsigned short int noware::db::sqlite::tries_dft = 1;
 //const noware::nr noware::db::sqlite::tries_dft = 1;
@@ -141,9 +141,9 @@ const bool noware::db::sqlite::query (std::map <std::string, std::map <std::stri
 	//noware::nr column_count;
 	int column_count;
 	//int column;
-	noware::nr column;
+	cln::nr column;
 	
-	noware::nr row;
+	cln::nr row;
 	//int row;
 	
 	//noware::nr tries;
